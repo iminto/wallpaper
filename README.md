@@ -1,7 +1,7 @@
 # wallpaper
 A small app written with vala. I use this example to learn vala step by step.
 
-#make
+# make
 ```
 sudo apt-get install valac
 sudo apt-get instal libsoup2.4-dev
