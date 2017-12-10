@@ -20,8 +20,8 @@ gsettings set org.cinnamon.desktop.background picture-uri file:///
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s 
 ```
 # config
-see config.json
-desktop: select your desktop enviroment,now support deepin,cinnamon and xfce.
-api:select which api/website you'll  used to download wallpaper.
-frequency:how long do you wish to change the wallpaper,default 30 means changing wallpaper every 30 minutes.
+see config.json 
+desktop: select your desktop enviroment,now support deepin,cinnamon and xfce. 
+api:select which api/website you'll  used to download wallpaper. 
+frequency:how long do you wish to change the wallpaper,default 30 means changing wallpaper every 30 minutes. 
 order: 1 means rank by order,2 means rand by random.
