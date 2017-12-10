@@ -23,11 +23,4 @@ public class Screen:Object{
 		}
 	}
 
-	
-	 public static void main(string[] args){
-		Screen screen=new Screen();
-		screen.getPixel();
-		stdout.printf("width=%d\n",screen.width);
-		stdout.printf("height=%d\n",screen.height);
-		}
 }

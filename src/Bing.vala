@@ -2,7 +2,7 @@ public class Bing:Object
 {
 	public void fetch() 
 	{
-		var uri = "https://cn.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=8";
+		var uri = "https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8";
 		var session = new Soup.Session ();
 		var msg = new Soup.Message ("GET", uri);
 		session.send_message (msg);
@@ -13,7 +13,7 @@ public class Bing:Object
 			stdout.printf ("请求接口异常");
 		}
 		//var home_dir = File.new_for_path (Environment.get_home_dir ());
-		File file = File.new_for_path ("bing.xml");
+		File file = File.new_for_path ("bing.json");
 		try 
 		{
 			FileOutputStream os = file.create (FileCreateFlags.NONE);
@@ -26,9 +26,23 @@ public class Bing:Object
 		}
 	}
 
+	public void parseJson(){
+		var file = File.new_for_path ("bing.json");
+		try 
+		{
+			var dis = new DataInputStream (file.read ());
+        		string line = dis.read_line (null);
+			stdout.printf(line);
+		}
+		catch (Error e) 
+		{
+			stdout.printf ("Error: %s\n", e.message);
+		}
+	}
+
 	public static void main(string[] args) 
 	{
 		Bing bing=new Bing();
-		bing.fetch();
+		bing.parseJson();
 	}
 }
