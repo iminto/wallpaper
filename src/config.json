@@ -1,0 +1,9 @@
+{
+    "desktop": "deepin",
+    "api": [
+        "bing",
+        "jandan"
+    ],
+    "frequency": "30",
+    "order": 1
+}
