@@ -6,15 +6,17 @@ public class Bing:Object
 		get;
 		set;
 	}
+
 	public Bing() 
 	{
-		this.confDir=Environment.get_home_dir ()+"/baiwall/";
+		this.confDir=Environment.get_home_dir ()+"/.config/baiwall";
 		var dir= File.new_for_path (this.confDir);
 		if (!dir.query_exists ()) 
 		{
 			dir.make_directory ();
 		}
 	}
+
 	public void fetch() 
 	{
 		var uri = "https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8";
@@ -60,13 +62,14 @@ public class Bing:Object
 			var root_object = parser.get_root ().get_object ();
 			var results = root_object.get_array_member ("images");
 			int64 count = results.get_length ();
-			stdout.printf ("got %lld results:\n\n", count);
+			Posix.system("notify-send -a BaiWall -i ./wallpaper.png 成功更新到"+count.to_string()+"张图片");
+			//stdout.printf ("got %lld results:\n\n", count);
 			var session = new Soup.Session ();
+			stdout.printf("壁纸存放路径:%s\n",this.confDir);
 			foreach (var img in results.get_elements ()) 
 			{
 				var imgo = img.get_object ();
 				var url="https://cn.bing.com"+imgo.get_string_member ("urlbase")+"_"+downloadPixel+".jpg";
-				stdout.printf("下载路径:%s\n",url);
 				// 开始下载了
 				var message = new Soup.Message ("GET",url);
 				session.send_message (message);
@@ -75,6 +78,7 @@ public class Bing:Object
 				if (!filejpg.query_exists ()) 
 				{
 					//已存在就不去下载了
+					stdout.printf("下载文件:%s\n",url);
 					FileOutputStream os = filejpg.create (FileCreateFlags.REPLACE_DESTINATION);
 					var dos = new DataOutputStream (os);
 					uint8[] data = message.response_body.data;
