@@ -9,11 +9,15 @@ public class Bing:Object
 
 	public Bing() 
 	{
-		this.confDir=Environment.get_home_dir ()+"/.config/baiwall";
+		this.confDir=Environment.get_home_dir ()+"/.config/baiwall/";
 		var dir= File.new_for_path (this.confDir);
 		if (!dir.query_exists ()) 
-		{
-			dir.make_directory ();
+		{	
+			try{
+				dir.make_directory ();
+			}catch (Error e){
+				stderr.printf ("配置目录创建出错,Error: %s\n", e.message);
+			}
 		}
 	}
 
@@ -27,7 +31,7 @@ public class Bing:Object
 		int statusCode=int.parse(co);
 		if(statusCode!=200) 
 		{
-			stdout.printf ("请求Bing Api接口异常");
+			stderr.printf ("请求Bing Api接口异常");
 		}
 		File file = File.new_for_path (this.confDir+"bing.json");
 		try 
@@ -38,7 +42,7 @@ public class Bing:Object
 		}
 		catch (Error e) 
 		{
-			stdout.printf ("Error: %s\n", e.message);
+			stderr.printf ("Error: %s\n", e.message);
 		}
 	}
   
@@ -95,7 +99,7 @@ public class Bing:Object
 		}
 		catch (Error e) 
 		{
-			stdout.printf ("Error: %s\n", e.message);
+			stderr.printf ("Error: %s\n", e.message);
 		}
 	}
   
