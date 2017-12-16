@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="window">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">墙纸设置</property>
+    <property name="window_position">center</property>
+    <property name="default_width">400</property>
+    <property name="default_height">170</property>
+    <property name="icon">./wallpaper.png</property>
+    <child>
+      <object class="GtkFixed" id="gtkfix">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="frelabel">
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">更新频率:</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="orderlabel">
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">是否随机:</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="ordervalue">
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="x">132</property>
+            <property name="y">49</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="fretooltip">
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">(单位:分钟)</property>
+          </object>
+          <packing>
+            <property name="x">290</property>
+            <property name="y">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="desklabel">
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">桌面环境:</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="deskvalue">
+            <property name="width_request">130</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="active">0</property>
+            <items>
+              <item id="deepin" translatable="yes">deepin</item>
+              <item id="cinnamon" translatable="yes">cinnamon</item>
+              <item id="xfce" translatable="yes">xfce</item>
+            </items>
+          </object>
+          <packing>
+            <property name="x">132</property>
+            <property name="y">90</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="freinput">
+            <property name="width_request">130</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="width_chars">8</property>
+            <property name="text" translatable="yes">30</property>
+            <property name="placeholder_text" translatable="yes">30</property>
+          </object>
+          <packing>
+            <property name="x">132</property>
+            <property name="y">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btn">
+            <property name="label" translatable="yes">try</property>
+            <property name="width_request">100</property>
+            <property name="height_request">40</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_right">10</property>
+          </object>
+          <packing>
+            <property name="x">290</property>
+            <property name="y">50</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

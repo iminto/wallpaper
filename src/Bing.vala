@@ -103,10 +103,4 @@ public class Bing:Object
 		}
 	}
   
-	public static void main(string[] args) 
-	{
-		Bing bing=new Bing();
-		bing.fetch();
-		bing.parseJson();
-	}
 }

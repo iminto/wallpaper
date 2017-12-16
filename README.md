@@ -3,11 +3,12 @@ A small app written by vala. Just use this example to learn vala step by step an
 
 # make
 ```
+export  NO_AT_BRIDGE=1
 sudo apt-get install valac
-sudo apt-get install libsoup2.4-dev libjson-glib-dev
+sudo apt-get install libsoup2.4-dev libjson-glib-dev libgtk-3-dev
 make && ./wallpaper
 ```
-
+![运行截图](/doc/demo.png)
 # tip 
 different desktops use different commands.
 ```

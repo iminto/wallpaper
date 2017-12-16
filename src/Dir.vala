@@ -36,12 +36,5 @@ public string[] listFilesWithImage(string? path){
 	return images;
 }
 
-public static void main (string[] args) {  
-	var dir=new Dir();
-	string[] images=dir.listFilesWithImage(args[1]);
-	foreach(string file in images){
-	    stdout.printf(file+"\n");
-	}
-}
 
 }
