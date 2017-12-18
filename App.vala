@@ -7,6 +7,7 @@ int main (string[] args) {
         builder.add_from_file ("wall.xml");
         builder.connect_signals (null);
         var window = builder.get_object ("window") as Window;
+		window.destroy.connect (Gtk.main_quit);
         window.show_all ();
         Gtk.main ();
     } catch (Error e) {
